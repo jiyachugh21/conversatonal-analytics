@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001; // ✅ important change
 
 // Middleware
 app.use(cors());
@@ -33,3 +33,5 @@ app.post('/api/ask', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+
