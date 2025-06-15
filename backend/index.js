@@ -9,8 +9,11 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
+const path = require('path');
+const dbPath = path.join(__dirname, 'mydb.sqlite');
+const db = new Database(dbPath, { verbose: console.log });
 // Connect to DB
-const db = new Database('./mydb.sqlite', { verbose: console.log });
+
 
 // Test route
 app.post('/api/ask', (req, res) => {
