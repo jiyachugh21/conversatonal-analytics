@@ -5,7 +5,7 @@ function App() {
   const [answer, setAnswer] = useState('');
 
   const handleAsk = async () => {
-    const response = await fetch('http://localhost:3001/api/ask', {
+  const response = await fetch('https://backend-api-v5gu.onrender.com/api/ask', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
